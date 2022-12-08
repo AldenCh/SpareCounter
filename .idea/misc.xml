@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2225" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/circle_button.xml" value="0.2225" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/circle_pin.xml" value="0.217" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2225" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/new_spare_icon_background.xml" value="0.2495" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/new_spare_icon_foreground.xml" value="0.2495" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/no_pin.xml" value="0.217" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/pin_pressed.xml" value="0.2225" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/pin_unpressed.xml" value="0.2225" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/reload_button.xml" value="0.217" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/reload_button_icon_background.xml" value="0.217" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/reload_button_icon_foreground.xml" value="0.217" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/stat_screen_icon_background.xml" value="0.217" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/stat_screen_icon_foreground.xml" value="0.217" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/drawable/yes_pin.xml" value="0.2495" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/layout/activity_main.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/layout/fragment_new_spare.xml" value="0.35625" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/layout/fragment_settings.xml" value="0.35625" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/layout/fragment_statistics.xml" value="0.3012967200610221" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/layout/fragment_stats.xml" value="0.3390625" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/layout/new_spare.xml" value="0.33" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/layout/new_spare_fragment.xml" value="0.35625" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/layout/statistic_list.xml" value="0.35625" />
+        <entry key="..\:/Users/Alden User/AndroidStudioProjects/SpareCounter/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3651041666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

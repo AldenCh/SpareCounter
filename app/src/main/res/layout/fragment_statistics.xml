@@ -1,0 +1,1714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Statistics"
+    android:background="@color/light_gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/statsPrompt"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_weight="3"
+            android:background="@color/blue_gray"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="BOTTOM 10 SPARES\t\t\t\t\t"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/statsScroll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/reload_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_gray"
+            android:background="@drawable/reload_button_icon_foreground"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/statsScroll"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="updateBottomTen"
+            />
+
+        <ScrollView
+            android:id="@+id/statsScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statsPrompt">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:id="@+id/row_1"
+                    android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_1_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_1_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_1_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_2_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_2_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_2_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_3_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_3_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_3_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_4_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_4_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_4_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_5_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_5_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_5_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_6_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_6_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_6_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_7_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_7_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_7_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_8_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_8_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_8_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_9_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_9_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_9_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+
+                <TableRow android:padding="10dp">
+
+                    <TableLayout
+                        android:id="@+id/row_10_pins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_7Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="7"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_8Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="8"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_9Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="9"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_10pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="10"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_4Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="4"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_5Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="5"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_6Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="6"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_2Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="2"
+                                android:textColor="@color/black"/>
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_3Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="3"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <android.widget.ToggleButton
+                                android:id="@+id/row_10_1Pin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/circle_button"
+                                android:backgroundTint="@null"
+                                android:enabled="false"
+                                android:textOff=""
+                                android:textOn="1"
+                                android:textColor="@color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/row_10_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Makes:\t\t-\nMisses:\t\t-\nPercentage: -"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:freezesText="true"/>
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
