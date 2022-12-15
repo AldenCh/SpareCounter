@@ -10,6 +10,7 @@ import java.io.Writer
 import java.lang.ClassCastException
 
 class JsonTools {
+    // Save the current stats to the "Records.json" file in internal storage
     fun saveJson(inputTable: Table, directory: File): Table {
         var table: Table = inputTable
         val output: Writer
@@ -42,6 +43,7 @@ class JsonTools {
         return table
     }
 
+    // Load stats from the "Records.json" file in internal storage
     fun loadTable(directory: File): Table{
         var result: Table = Table()
         val storageDirectory = directory
@@ -66,6 +68,7 @@ class JsonTools {
         return result
     }
 
+    // Tester function to create sample spare data
     fun createSampleJsonData(directory: File){
         val output:Writer
         val storageDirectory = directory
@@ -98,6 +101,7 @@ class JsonTools {
         output.close()
     }
 
+    // Clear the "Records.json" file
     fun clearJsonData(directory: File){
         val output:Writer
         val storageDirectory = directory

@@ -3,23 +3,30 @@ package com.example.sparecounter.statrecord
 import kotlin.math.roundToInt
 
 class Spare constructor(id: String){
+    // The pins related to the current spare
     public final val ID: String = id
+
+    // The stats of your spare
     private var makes: Int = 0
     private var misses: Int = 0
     private var percentage: Double = 0.0
 
+    // Constructor for no percentage
     constructor(id: String, make: Int, miss: Int) : this(id){
         makes = make
         misses = miss
         updatePercentage()
     }
 
+    // Constructor including percentage
     constructor(id: String, make: Int, miss: Int, percent: Double) : this(id){
         makes = make
         misses = miss
         percentage = percent
     }
 
+    // Function to update values for a given spare
+    // and handle pre-modification checks
     public fun editStats(isMake: Boolean, value: Int){
         if (isMake){
             makes += value
@@ -36,14 +43,17 @@ class Spare constructor(id: String){
         updatePercentage()
     }
 
+    // Getter For Spare Makes
     public fun getMakes(): Int{
         return makes
     }
 
+    // Getter For Spare Misses
     public fun getMisses(): Int{
         return misses
     }
 
+    // Getter For Spare Percentage
     public fun getPercentage(): Double{
         return percentage
     }

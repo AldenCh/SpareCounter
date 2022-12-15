@@ -12,27 +12,33 @@ import com.google.android.material.textfield.TextInputEditText
 import java.io.*
 
 class MainActivity : AppCompatActivity() {
+    // Table holding all the Spare data
     private var records: Table = Table()
 
+    // Variables to store references to GUI elements
     private var pinList: List<ToggleButton>? = null
     private var makeQuantityField: TextInputEditText? = null
     private var missQuantityField: TextInputEditText? = null
     private var percentagePrompt: TextView? = null
-
     private var statRowPins: List<TableLayout>? = null
     private var statRowTexts: List<TextView>? = null
 
+    // Variables for the navigation bar
     private lateinit var binding: ActivityMainBinding
     private var spareScreen = NewSpare()
     private var statScreen = Statistics()
     private var settingScreen = Settings()
 
+    // ID of the current Spare shown on the Add Spare screen
     private var id: String = ""
 
+    // Counter to confirm data deletion
     private var clearCounter: Int = 0
 
+    // Json tools variable to handle File IO
     private var jsonTools: JsonTools = JsonTools()
 
+    // Initialize the navigation bar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -55,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    // Handle switching between screens of the navigation bar
     private fun replaceFragment(fragment: Fragment){
         clearCounter = 0
         val fragmentManager = supportFragmentManager
@@ -63,6 +70,8 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
+    // Initialize the references to the toggle buttons representing pins on
+    // the Add Spare Page
     private fun instantiateSpareEntryFields(){
         val onePin: ToggleButton = findViewById(R.id.onePin)
         val twoPin: ToggleButton = findViewById(R.id.twoPin)
@@ -81,6 +90,7 @@ class MainActivity : AppCompatActivity() {
         percentagePrompt = findViewById(R.id.sparePercentagePrompt)
     }
 
+    // Initialize the references to each row of pins on the Add Spare page
     private fun instantiateStatRows(){
         val rowOne: TableLayout = findViewById(R.id.row_1_pins)
         val rowTwo: TableLayout = findViewById(R.id.row_2_pins)
@@ -109,6 +119,7 @@ class MainActivity : AppCompatActivity() {
             rowFiveText, rowSixText, rowSevenText, rowEightText, rowNineText,rowTenText)
     }
 
+    // Update the spares shown on the bottom ten screen
     private fun updateBottomTen(){
         instantiateStatRows()
         val sortedRecords: List<Spare> = records.getTable().values.toList().sortedBy { it.getPercentage() }
@@ -128,6 +139,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 
     public fun updateBottomTen(view: View){
         clearCounter = 0
@@ -151,6 +163,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Reloaded", Toast.LENGTH_SHORT).show()
     }
 
+    // Update the Toggle Buttons representing pins on the home page
     private fun updatePins(pins: TableLayout, id: String){
         ((pins.getChildAt(3) as TableRow).getChildAt(0) as ToggleButton).isChecked = id.contains("1")
         ((pins.getChildAt(2) as TableRow).getChildAt(0) as ToggleButton).isChecked = id.contains("2")
@@ -164,10 +177,13 @@ class MainActivity : AppCompatActivity() {
         ((pins.getChildAt(0) as TableRow).getChildAt(3) as ToggleButton).isChecked = id.contains("0")
     }
 
+    // Update the stats text on the Add Spare screen
     private fun updateText(node: Spare, view: TextView){
         view.text = "Makes:\t\t${node.getMakes()}\nMisses:\t${node.getMisses()}\nPercentage: ${node.getPercentage()}%"
     }
 
+    // Update the text in the Percentage Label, Make and Miss Text Fields
+    // based on the selected Spare
     public fun updateSpareFields(view: View){
         clearCounter = 0
         instantiateSpareEntryFields()
@@ -203,44 +219,41 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Functions linked to the increment and decrement buttons under the
+    // Miss and Make Text Fields that call for updates to the Table
     public fun updateMake(view: View){
         if (makeQuantityField?.text != null && makeQuantityField?.text?.contains(".") != true){
             updateSpare(true, Integer.parseInt(makeQuantityField?.text.toString()))
         }
     }
-
     public fun increaseMake(view: View){
         if (makeQuantityField?.text?.contains(".") != true){
             updateSpare(true, 1)
         }
     }
-
     public fun decreaseMake(view: View){
         if (makeQuantityField?.text?.contains(".") != true){
             updateSpare(true, -1)
         }
     }
-
     public fun updateMiss(view: View){
         if (missQuantityField?.text != null && missQuantityField?.text?.contains(".") != true){
             updateSpare(false, Integer.parseInt(missQuantityField?.text.toString()))
         }
     }
-
     public fun increaseMiss(view: View){
         if (missQuantityField?.text?.contains(".") != true){
             updateSpare(false, 1)
         }
     }
-
     public fun decreaseMiss(view: View){
         if (missQuantityField?.text?.contains(".") != true){
             updateSpare(false, -1)
         }
     }
 
+    // Function to update the Spares in the Table and internal storage
     public fun updateSpare(isMake: Boolean, value: Int){
-//        instantiateSpareEntryFields()
         clearCounter = 0
         if (id != "" && id != null) {
             if (isMake){
@@ -256,6 +269,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Function linked to the clear button in the settings page that clears the
+    // table and calls the function to clear the record in internal storage too
     public fun buttonClearJsonData(view: View){
         clearCounter++
         if (clearCounter == 3){
@@ -294,6 +309,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Calls the function to save values in the Table to internal storage
     private fun saveJson(){
         jsonTools.saveJson(records, File(this.getExternalFilesDir(null), "Storage"))
     }
