@@ -58,6 +58,7 @@ class Spare constructor(id: String){
         return percentage
     }
 
+    // Function to update Spare Percentage
     private fun updatePercentage(){
         if (makes+misses != 0){
             percentage = ((makes.toDouble()/(makes+misses).toDouble())*10000.0).roundToInt().toDouble()/100.0
@@ -67,6 +68,7 @@ class Spare constructor(id: String){
         }
     }
 
+    // toString method
     override fun toString(): String {
         return "\t\t Spare: $ID\n\t\t Makes: $makes\n\t\tMisses: $misses\n\tPercentage: $percentage%"
     }
