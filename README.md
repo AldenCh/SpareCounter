@@ -8,6 +8,7 @@ A simple bowling spare counter to help track your progress, more features to com
 ## Features:
 - A home screen to track your spare makes and misses
 - A stats screen to track your highest miss percentage spares
+- A settings screen to wipe your spare data
 
 ## Home Page:
 1. The Home Page / Startup Screen:<br><br>
